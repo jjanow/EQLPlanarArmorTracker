@@ -79,7 +79,7 @@ export EQ_PLANAR_ARMOR_DIR=/path/to/dumps       # bash/zsh
 
 Scanning every Wine prefix / Installed Games folder on every run is slow, so
 the first auto-discovery run caches whatever directories it finds in
-`eq_planar_armor_config.json` (next to the script) and reuses that list on
+`config.json` (next to the script) and reuses that list on
 later runs instead of re-scanning. This file is machine-local and
 git-ignored.
 
@@ -94,7 +94,7 @@ To update it:
   ./run.sh --add-dir /path/to/extra/dumps
   ```
 - **`--rescan`** -- ignores the cache and redoes the full auto-discovery
-  scan, overwriting `eq_planar_armor_config.json` with the fresh result
+  scan, overwriting `config.json` with the fresh result
   (useful after a fresh install, or if a cached path no longer works):
 
   ```

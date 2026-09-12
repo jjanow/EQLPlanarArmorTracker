@@ -28,7 +28,7 @@ _DIR_OVERRIDE_ENV_VARS = ("EQ_PLANAR_ARMOR_DIR", "EQSKYTRACKER_DIR")
 # have to re-walk Wine prefixes / Installed Games trees every time. Plain
 # JSON, safe to hand-edit -- add or remove paths under "discovered_dirs" and
 # they'll be used as-is on the next run, no rescan needed.
-CONFIG_FILE = Path(__file__).resolve().parent / "eq_planar_armor_config.json"
+CONFIG_FILE = Path(__file__).resolve().parent / "config.json"
 
 
 def normalize_item_name(name: str) -> str:
