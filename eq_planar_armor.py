@@ -8,7 +8,11 @@ one you're currently playing, since EQ Legends lets you switch classes.
 
 Reads EverQuest-style "/outputfile inventory" dumps
 (<Character>_<Server>-Inventory.txt); see inventory.py for the file format
-and auto-discovery locations, and armor_data.py for the set/drop data.
+and auto-discovery locations, and armor_data.json for the set/drop data
+(armor_data.py just loads it).
+
+Works the same on Windows and Linux/macOS -- run it with `python` or
+`python3` directly, or use run.bat (Windows) / run.sh (Linux/macOS).
 """
 
 from __future__ import annotations

@@ -1,0 +1,855 @@
+{
+  "_meta": {
+    "description": "Classic Planar Armor set and drop data for EverQuest Legends, scraped from eqlwiki.",
+    "sources": [
+      "https://eqlwiki.com/Classic_Planar_Armor:_Group_1",
+      "https://eqlwiki.com/Classic_Planar_Armor:_Group_2"
+    ],
+    "notes": [
+      "Every set has 7 distinct piece names across 8 gear slots: the wrist piece is worn on both wrist slots, so its 'need' is 2.",
+      "group_drops keys are armor-set 'group' (1 or 2). Chest/Hands/Feet/Wrist drop in the Plane of Fear; Arms/Head/Legs/Wrist drop in the Plane of Hate -- Wrist needs 2 and can come from either zone's mobs.",
+      "universal_drops can drop any planar class's piece for the slot they hit, regardless of set/group."
+    ]
+  },
+  "armor_sets": [
+    {
+      "name": "Lustrous Russet Armor",
+      "who": "Generic (Plate/Chain)",
+      "group": 1,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Lustrous Russet Helm"
+        },
+        {
+          "slot": "Chest",
+          "name": "Lustrous Russet Breastplate"
+        },
+        {
+          "slot": "Arms",
+          "name": "Lustrous Russet Vambraces"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Lustrous Russet Bracer",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Lustrous Russet Gauntlets"
+        },
+        {
+          "slot": "Legs",
+          "name": "Lustrous Russet Greaves"
+        },
+        {
+          "slot": "Feet",
+          "name": "Lustrous Russet Boots"
+        }
+      ]
+    },
+    {
+      "name": "Midnight Clad Armor",
+      "who": "Generic (Leather/Cloth)",
+      "group": 2,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Midnight Clad Headband"
+        },
+        {
+          "slot": "Chest",
+          "name": "Midnight Clad Straps"
+        },
+        {
+          "slot": "Arms",
+          "name": "Midnight Clad Armbands"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Midnight Clad Wristbands",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Midnight Clad Fistwraps"
+        },
+        {
+          "slot": "Legs",
+          "name": "Midnight Clad Leggings"
+        },
+        {
+          "slot": "Feet",
+          "name": "Midnight Clad Footwraps"
+        }
+      ]
+    },
+    {
+      "name": "Anthemion Armor",
+      "who": "Beastlord",
+      "group": 1,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Anthemion Skullcap"
+        },
+        {
+          "slot": "Chest",
+          "name": "Anthemion Jerkin"
+        },
+        {
+          "slot": "Arms",
+          "name": "Anthemion Armbands"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Anthemion Wristguard",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Anthemion Gloves"
+        },
+        {
+          "slot": "Legs",
+          "name": "Anthemion Leggings"
+        },
+        {
+          "slot": "Feet",
+          "name": "Anthemion Boots"
+        }
+      ]
+    },
+    {
+      "name": "Imbrued Armor",
+      "who": "Bard",
+      "group": 2,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Imbrued Platemail Helm"
+        },
+        {
+          "slot": "Chest",
+          "name": "Imbrued Platemail Breastplate"
+        },
+        {
+          "slot": "Arms",
+          "name": "Imbrued Platemail Vambraces"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Imbrued Platemail Bracer",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Imbrued Platemail Gauntlets"
+        },
+        {
+          "slot": "Legs",
+          "name": "Imbrued Platemail Greaves"
+        },
+        {
+          "slot": "Feet",
+          "name": "Imbrued Platemail Boots"
+        }
+      ]
+    },
+    {
+      "name": "Shadow Rage Armor",
+      "who": "Berserker",
+      "group": 1,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Shadow Rage Helm"
+        },
+        {
+          "slot": "Chest",
+          "name": "Shadow Rage Tunic"
+        },
+        {
+          "slot": "Arms",
+          "name": "Shadow Rage Sleeves"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Shadow Rage Wristguard",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Shadow Rage Gloves"
+        },
+        {
+          "slot": "Legs",
+          "name": "Shadow Rage Leggings"
+        },
+        {
+          "slot": "Feet",
+          "name": "Shadow Rage Boots"
+        }
+      ]
+    },
+    {
+      "name": "Insidious Armor",
+      "who": "Enchanter",
+      "group": 2,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Insidious Halo"
+        },
+        {
+          "slot": "Chest",
+          "name": "Insidious Robe"
+        },
+        {
+          "slot": "Arms",
+          "name": "Insidious Sleeves"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Insidious Manacle",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Insidious Gloves"
+        },
+        {
+          "slot": "Legs",
+          "name": "Insidious Pantaloons"
+        },
+        {
+          "slot": "Feet",
+          "name": "Insidious Slippers"
+        }
+      ]
+    },
+    {
+      "name": "Ethereal Mist Armor",
+      "who": "Cleric",
+      "group": 1,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Ethereal Mist Helm"
+        },
+        {
+          "slot": "Chest",
+          "name": "Ethereal Mist Chestplate"
+        },
+        {
+          "slot": "Arms",
+          "name": "Ethereal Mist Vambraces"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Ethereal Mist Bracers",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Ethereal Mist Gauntlets"
+        },
+        {
+          "slot": "Legs",
+          "name": "Ethereal Mist Greaves"
+        },
+        {
+          "slot": "Feet",
+          "name": "Ethereal Mist Boots"
+        }
+      ]
+    },
+    {
+      "name": "Apothic Armor",
+      "who": "Magician",
+      "group": 2,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Apothic Crown"
+        },
+        {
+          "slot": "Chest",
+          "name": "Apothic Robe"
+        },
+        {
+          "slot": "Arms",
+          "name": "Apothic Sleeves"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Apothic Warband",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Apothic Gloves"
+        },
+        {
+          "slot": "Legs",
+          "name": "Apothic Kilt"
+        },
+        {
+          "slot": "Feet",
+          "name": "Apothic Boots"
+        }
+      ]
+    },
+    {
+      "name": "Vermiculated Armor",
+      "who": "Druid",
+      "group": 1,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Vermiculated Crown"
+        },
+        {
+          "slot": "Chest",
+          "name": "Vermiculated Tunic"
+        },
+        {
+          "slot": "Arms",
+          "name": "Vermiculated Armplates"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Vermiculated Bracelet",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Vermiculated Gloves"
+        },
+        {
+          "slot": "Legs",
+          "name": "Vermiculated Leggings"
+        },
+        {
+          "slot": "Feet",
+          "name": "Vermiculated Boots"
+        }
+      ]
+    },
+    {
+      "name": "Blighted Armor",
+      "who": "Necromancer",
+      "group": 2,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Blighted Skullcap"
+        },
+        {
+          "slot": "Chest",
+          "name": "Blighted Robe"
+        },
+        {
+          "slot": "Arms",
+          "name": "Blighted Sleeves"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Blighted Armband",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Blighted Gloves"
+        },
+        {
+          "slot": "Legs",
+          "name": "Blighted Trousers"
+        },
+        {
+          "slot": "Feet",
+          "name": "Blighted Boots"
+        }
+      ]
+    },
+    {
+      "name": "Shiverback-hide Armor",
+      "who": "Monk",
+      "group": 1,
+      "pieces": [
+        {
+          "slot": "Chest",
+          "name": "Shiverback-hide Jerkin"
+        },
+        {
+          "slot": "Arms",
+          "name": "Shiverback-hide Armbands"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Shiverback-hide Wristbands",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Shiverback-hide Gloves"
+        },
+        {
+          "slot": "Legs",
+          "name": "Shiverback-hide Leggings"
+        },
+        {
+          "slot": "Feet",
+          "name": "Shiverback-hide Boots"
+        }
+      ],
+      "notes": [
+        "No head-slot piece exists for this set."
+      ]
+    },
+    {
+      "name": "Woven Shadow Armor",
+      "who": "Rogue",
+      "group": 2,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Woven Shadow Helm"
+        },
+        {
+          "slot": "Chest",
+          "name": "Woven Shadow Chestplate"
+        },
+        {
+          "slot": "Arms",
+          "name": "Woven Shadow Vambraces"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Woven Shadow Bracer",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Woven Shadow Gauntlets"
+        },
+        {
+          "slot": "Legs",
+          "name": "Woven Shadow Greaves"
+        },
+        {
+          "slot": "Feet",
+          "name": "Woven Shadow Boots"
+        }
+      ]
+    },
+    {
+      "name": "Valorium Armor",
+      "who": "Paladin",
+      "group": 1,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Valorium Helmet"
+        },
+        {
+          "slot": "Chest",
+          "name": "Valorium Chestplate"
+        },
+        {
+          "slot": "Arms",
+          "name": "Valorium Vambraces"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Valorium Bracer",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Valorium Gauntlets"
+        },
+        {
+          "slot": "Legs",
+          "name": "Valorium Greaves"
+        },
+        {
+          "slot": "Feet",
+          "name": "Valorium Boots"
+        }
+      ]
+    },
+    {
+      "name": "Umbral Platemail",
+      "who": "Shadow Knight",
+      "group": 2,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Umbral Platemail Helm"
+        },
+        {
+          "slot": "Chest",
+          "name": "Umbral Platemail Breastplate"
+        },
+        {
+          "slot": "Arms",
+          "name": "Umbral Platemail Vambraces"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Umbral Platemail Bracer",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Umbral Platemail Gauntlets"
+        },
+        {
+          "slot": "Legs",
+          "name": "Umbral Platemail Greaves"
+        },
+        {
+          "slot": "Feet",
+          "name": "Umbral Platemail Boots"
+        }
+      ]
+    },
+    {
+      "name": "Thorny Vine Armor",
+      "who": "Ranger",
+      "group": 1,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Thorny Vine Helm"
+        },
+        {
+          "slot": "Chest",
+          "name": "Thorny Vine Chestplate"
+        },
+        {
+          "slot": "Arms",
+          "name": "Thorny Vine Vambraces"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Thorny Vine Bracer",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Thorny Vine Gauntlets"
+        },
+        {
+          "slot": "Legs",
+          "name": "Thorny Vine Greaves"
+        },
+        {
+          "slot": "Feet",
+          "name": "Thorny Vine Boots"
+        }
+      ]
+    },
+    {
+      "name": "Indicolite Armor",
+      "who": "Warrior",
+      "group": 2,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Indicolite Helm"
+        },
+        {
+          "slot": "Chest",
+          "name": "Indicolite Breastplate"
+        },
+        {
+          "slot": "Arms",
+          "name": "Indicolite Vambraces"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Indicolite Bracer",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Indicolite Gauntlets"
+        },
+        {
+          "slot": "Legs",
+          "name": "Indicolite Greaves"
+        },
+        {
+          "slot": "Feet",
+          "name": "Indicolite Boots"
+        }
+      ]
+    },
+    {
+      "name": "Rune Etched Armor",
+      "who": "Shaman",
+      "group": 1,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Rune Etched Helm"
+        },
+        {
+          "slot": "Chest",
+          "name": "Rune Etched Chestplate"
+        },
+        {
+          "slot": "Arms",
+          "name": "Rune Etched Vambraces"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Rune Etched Bracer",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Rune Etched Gauntlets"
+        },
+        {
+          "slot": "Legs",
+          "name": "Rune Etched Greaves"
+        },
+        {
+          "slot": "Feet",
+          "name": "Rune Etched Boots"
+        }
+      ]
+    },
+    {
+      "name": "Carmine Armor",
+      "who": "Wizard",
+      "group": 2,
+      "pieces": [
+        {
+          "slot": "Head",
+          "name": "Carmine Turban"
+        },
+        {
+          "slot": "Chest",
+          "name": "Carmine Robe"
+        },
+        {
+          "slot": "Arms",
+          "name": "Carmine Sleeves"
+        },
+        {
+          "slot": "Wrist",
+          "name": "Carmine Trinket",
+          "need": 2
+        },
+        {
+          "slot": "Hands",
+          "name": "Carmine Gloves"
+        },
+        {
+          "slot": "Legs",
+          "name": "Carmine Pants"
+        },
+        {
+          "slot": "Feet",
+          "name": "Carmine Boots"
+        }
+      ]
+    }
+  ],
+  "group_drops": {
+    "1": {
+      "Chest": [
+        [
+          "a glare lord",
+          "Fear"
+        ],
+        [
+          "a tentacle tormentor",
+          "Fear"
+        ]
+      ],
+      "Hands": [
+        [
+          "a scareling",
+          "Fear"
+        ],
+        [
+          "a shiverback",
+          "Fear"
+        ]
+      ],
+      "Feet": [
+        [
+          "a boogeyman",
+          "Fear"
+        ],
+        [
+          "a phantasm",
+          "Fear"
+        ]
+      ],
+      "Wrist": [
+        [
+          "a decrepit warder",
+          "Fear"
+        ],
+        [
+          "a samhain",
+          "Fear"
+        ],
+        [
+          "an abhorrent",
+          "Hate"
+        ],
+        [
+          "a scorn banshee",
+          "Hate"
+        ]
+      ],
+      "Arms": [
+        [
+          "a forsaken revenant (female)",
+          "Hate"
+        ],
+        [
+          "an ire ghast",
+          "Hate"
+        ]
+      ],
+      "Head": [
+        [
+          "Cleric of Innoruuk",
+          "Hate"
+        ]
+      ],
+      "Legs": [
+        [
+          "an elite dragoon (male)",
+          "Hate"
+        ],
+        [
+          "Innoruuk's Chosen (male)",
+          "Hate"
+        ],
+        [
+          "a Disciple of Innoruuk",
+          "Hate"
+        ],
+        [
+          "a Knight of Innoruuk",
+          "Hate"
+        ]
+      ]
+    },
+    "2": {
+      "Chest": [
+        [
+          "amygdalan knight",
+          "Fear"
+        ],
+        [
+          "amygdalan warrior",
+          "Fear"
+        ]
+      ],
+      "Hands": [
+        [
+          "a frightfinger",
+          "Fear"
+        ],
+        [
+          "a turmoil toad",
+          "Fear"
+        ],
+        [
+          "a worry wraith",
+          "Fear"
+        ]
+      ],
+      "Feet": [
+        [
+          "a gorgon",
+          "Fear"
+        ],
+        [
+          "a nightmare",
+          "Fear"
+        ]
+      ],
+      "Wrist": [
+        [
+          "a fetid fiend",
+          "Fear"
+        ],
+        [
+          "a spinechiller spider",
+          "Fear"
+        ],
+        [
+          "a kiraikuei",
+          "Hate"
+        ],
+        [
+          "a loathling lich",
+          "Hate"
+        ],
+        [
+          "a revultant rat",
+          "Hate"
+        ]
+      ],
+      "Arms": [
+        [
+          "a forsaken revenant (male)",
+          "Hate"
+        ],
+        [
+          "an ashenbone drake",
+          "Hate"
+        ]
+      ],
+      "Head": [
+        [
+          "a spite golem",
+          "Hate"
+        ]
+      ],
+      "Legs": [
+        [
+          "an elite dragoon (female)",
+          "Hate"
+        ],
+        [
+          "Innoruuk's Chosen (female)",
+          "Hate"
+        ],
+        [
+          "an Agent of Innoruuk",
+          "Hate"
+        ],
+        [
+          "a Champion of Innoruuk",
+          "Hate"
+        ],
+        [
+          "a Sage of Innoruuk",
+          "Hate"
+        ]
+      ]
+    }
+  },
+  "universal_drops": [
+    [
+      "Phoboplasm",
+      "Plane of Fear -- rare, any slot/set"
+    ],
+    [
+      "A haunted chest (Innoruuk raid instance)",
+      "Plane of Hate -- rare, any slot/set"
+    ]
+  ]
+}

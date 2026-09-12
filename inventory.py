@@ -87,6 +87,9 @@ def find_candidate_dirs() -> list[Path]:
     home = Path.home()
     env_dir = next((os.environ[v] for v in _DIR_OVERRIDE_ENV_VARS if os.environ.get(v)), None)
     roots = [Path(env_dir)] if env_dir else []
+
+    # Linux/macOS: the game runs inside a Wine prefix, which simulates a
+    # Windows filesystem rooted at <prefix>/drive_c.
     wine_root_parents = [home / ".wine", home / "Games", home / ".local/share/wineprefixes"]
     prefixes: list[Path] = []
     for parent in wine_root_parents:
@@ -98,6 +101,16 @@ def find_candidate_dirs() -> list[Path]:
         if installed_games.is_dir():
             roots.append(installed_games)
             roots.extend(p for p in installed_games.iterdir() if p.is_dir())
+
+    # Native Windows: same relative layout, rooted at the real Public
+    # profile. %PUBLIC% is set by Windows itself; fall back to the
+    # conventional path if it's missing (e.g. a non-standard shell).
+    public_dir = Path(os.environ.get("PUBLIC", r"C:\Users\Public"))
+    installed_games = public_dir / "Daybreak Game Company/Installed Games"
+    if installed_games.is_dir():
+        roots.append(installed_games)
+        roots.extend(p for p in installed_games.iterdir() if p.is_dir())
+
     roots.append(home / "Documents/EverQuest")
     roots.append(Path.cwd())
 
