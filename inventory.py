@@ -10,6 +10,7 @@ Inventory.cs / Discovery.cs use:
 
 from __future__ import annotations
 
+import json
 import os
 import re
 import sys
@@ -22,6 +23,12 @@ _SUFFIX_RE = re.compile(r"\s*(\+\d+|\(Exaltation\))\s*$")
 # EQ_PLANAR_ARMOR_DIR is accepted as an alias since this tool isn't
 # eqskytracker, but either name works.
 _DIR_OVERRIDE_ENV_VARS = ("EQ_PLANAR_ARMOR_DIR", "EQSKYTRACKER_DIR")
+
+# Caches the directories found by find_candidate_dirs() so repeat runs don't
+# have to re-walk Wine prefixes / Installed Games trees every time. Plain
+# JSON, safe to hand-edit -- add or remove paths under "discovered_dirs" and
+# they'll be used as-is on the next run, no rescan needed.
+CONFIG_FILE = Path(__file__).resolve().parent / "eq_planar_armor_config.json"
 
 
 def normalize_item_name(name: str) -> str:
@@ -83,6 +90,52 @@ def parse_inventory(path: Path) -> dict[str, int]:
     return owned
 
 
+def load_config_dirs() -> list[Path]:
+    """Returns the cached directory list from CONFIG_FILE, or [] if missing/invalid."""
+    try:
+        raw = json.loads(CONFIG_FILE.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    return [Path(p) for p in raw.get("discovered_dirs", [])]
+
+
+def save_config_dirs(dirs: list[Path]) -> None:
+    paths = sorted({str(d.resolve()) for d in dirs})
+    payload = {
+        "_comment": (
+            "Cached EQ Legends install/dump directories, so eq_planar_armor.py "
+            "doesn't have to re-scan Wine prefixes and Installed Games trees on "
+            "every run. Feel free to hand-edit 'discovered_dirs' -- add, remove, "
+            "or fix a path -- or just delete this file / pass --rescan to have "
+            "it regenerated from scratch."
+        ),
+        "discovered_dirs": paths,
+    }
+    CONFIG_FILE.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+
+def add_config_dir(path: Path) -> list[Path]:
+    """Adds one directory to the cached list (creating it if needed) and saves it."""
+    dirs = [d for d in load_config_dirs() if d.is_dir()]
+    dirs.append(path)
+    save_config_dirs(dirs)
+    return dirs
+
+
+def get_search_dirs(rescan: bool = False) -> list[Path]:
+    """Returns the directories to search for inventory dumps, using the cached
+    config unless it's missing, empty, stale (no surviving dirs), or a rescan
+    is requested -- in which case it re-discovers and re-caches them."""
+    if not rescan:
+        cached = [d for d in load_config_dirs() if d.is_dir()]
+        if cached:
+            return cached
+
+    discovered = find_candidate_dirs()
+    save_config_dirs(discovered)
+    return discovered
+
+
 def find_candidate_dirs() -> list[Path]:
     home = Path.home()
     env_dir = next((os.environ[v] for v in _DIR_OVERRIDE_ENV_VARS if os.environ.get(v)), None)
@@ -127,7 +180,7 @@ def find_candidate_dirs() -> list[Path]:
     return unique
 
 
-def find_inventory_files(arg: str | None) -> list[Path]:
+def find_inventory_files(arg: str | None, rescan: bool = False) -> list[Path]:
     if arg:
         p = Path(arg).expanduser()
         if p.is_file():
@@ -138,7 +191,7 @@ def find_inventory_files(arg: str | None) -> list[Path]:
         sys.exit(1)
 
     found: dict[str, Path] = {}
-    for d in find_candidate_dirs():
+    for d in get_search_dirs(rescan=rescan):
         for f in d.glob("*-Inventory.txt"):
             found.setdefault(f.name, f)
     return sorted(found.values())

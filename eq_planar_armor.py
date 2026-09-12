@@ -21,10 +21,10 @@ import argparse
 import sys
 from pathlib import Path
 
-from inventory import find_inventory_files, parse_inventory
+from inventory import CONFIG_FILE, add_config_dir, find_inventory_files, parse_inventory
 from report import render_character_report, render_footer
 
-DEFAULT_OUTPUT_FILENAME = "eq_planar_armor_report.txt"
+DEFAULT_OUTPUT_FILENAME = "planar_armor_report.txt"
 
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
@@ -35,7 +35,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         "path",
         nargs="?",
         help="a specific *-Inventory.txt dump, or a directory to scan. "
-        "Omit to auto-discover dumps in common EQ Legends install locations.",
+        "Omit to auto-discover dumps using cached (or freshly scanned) EQ "
+        "Legends install locations.",
     )
     parser.add_argument(
         "-o",
@@ -43,12 +44,33 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         default=DEFAULT_OUTPUT_FILENAME,
         help=f"where to write the report (default: {DEFAULT_OUTPUT_FILENAME} in the current directory)",
     )
+    parser.add_argument(
+        "--rescan",
+        action="store_true",
+        help="ignore the cached install-directory list "
+        f"({CONFIG_FILE.name}) and re-scan common EQ Legends install locations",
+    )
+    parser.add_argument(
+        "--add-dir",
+        metavar="DIR",
+        help="add an extra directory to the cached install-directory list "
+        f"({CONFIG_FILE.name}) for auto-discovery, then continue as usual",
+    )
     return parser.parse_args(argv)
 
 
 def main() -> None:
     args = parse_args(sys.argv[1:])
-    files = find_inventory_files(args.path)
+
+    if args.add_dir:
+        d = Path(args.add_dir).expanduser()
+        if not d.is_dir():
+            print(f"error: --add-dir path not found: {d}", file=sys.stderr)
+            sys.exit(1)
+        add_config_dir(d)
+        print(f"Added {d.resolve()} to {CONFIG_FILE}")
+
+    files = find_inventory_files(args.path, rescan=args.rescan)
     if not files:
         print("No *-Inventory.txt dump files found. Run '/outputfile inventory' in-game,")
         print("or pass a path: python3 eq_planar_armor.py <file-or-directory>")

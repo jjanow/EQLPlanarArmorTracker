@@ -75,6 +75,37 @@ $env:EQ_PLANAR_ARMOR_DIR = "D:\path\to\dumps"   # PowerShell
 export EQ_PLANAR_ARMOR_DIR=/path/to/dumps       # bash/zsh
 ```
 
+### Directory caching
+
+Scanning every Wine prefix / Installed Games folder on every run is slow, so
+the first auto-discovery run caches whatever directories it finds in
+`eq_planar_armor_config.json` (next to the script) and reuses that list on
+later runs instead of re-scanning. This file is machine-local and
+git-ignored.
+
+To update it:
+
+- **Hand-edit it** -- it's plain JSON with a `discovered_dirs` array; add,
+  remove, or fix a path and save.
+- **`--add-dir <path>`** -- appends a directory to the cached list without a
+  full rescan:
+
+  ```
+  ./run.sh --add-dir /path/to/extra/dumps
+  ```
+- **`--rescan`** -- ignores the cache and redoes the full auto-discovery
+  scan, overwriting `eq_planar_armor_config.json` with the fresh result
+  (useful after a fresh install, or if a cached path no longer works):
+
+  ```
+  ./run.sh --rescan
+  ```
+- **Delete the file** -- with it gone, the next run auto-discovers and
+  recreates it, same as `--rescan`.
+
+Cached directories that no longer exist are skipped automatically; if none
+of them survive, the tool falls back to a full rescan on its own.
+
 The report is printed to the terminal and also saved to
 `eq_planar_armor_report.txt` (or wherever `-o`/`--output` points).
 

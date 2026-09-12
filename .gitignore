@@ -1,3 +1,6 @@
+# EQLPlanarArmorTracker: machine-local cache of discovered install dirs
+eq_planar_armor_config.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
