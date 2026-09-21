@@ -58,4 +58,9 @@ def render_footer() -> str:
     ]
     for mob, note in UNIVERSAL_DROPS:
         lines.append(f"  {mob} ({note})")
+
+    lines.append(
+        "\nNote: pieces equipped on your pet won't show as owned -- "
+        "/outputfile inventory doesn't dump pet equipment."
+    )
     return "\n".join(lines)

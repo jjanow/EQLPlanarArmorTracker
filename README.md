@@ -122,7 +122,7 @@ Valorium Armor (Paladin) -- 7/7 pieces
   [x] Head   Valorium Helmet                  1
   [x] Chest  Valorium Chestplate              1
   [x] Arms   Valorium Vambraces               1
-  [x] Wrist  Valorium Bracer                  2/2
+  [x] Wrist  Valorium Bracers                 2/2
   [x] Hands  Valorium Gauntlets               1
   [x] Legs   Valorium Greaves                 1
   [x] Feet   Valorium Boots                   1
@@ -137,6 +137,11 @@ Ethereal Mist Armor (Cleric) -- 3/7 pieces
 
 --- NOT STARTED (0 pieces) ---
   Apothic Armor (Magician), Blighted Armor (Necromancer), ...
+
+Also keep an eye out for these rare, universal droppers -- ...
+
+Note: pieces equipped on your pet won't show as owned -- /outputfile
+inventory doesn't dump pet equipment.
 ```
 
 ## How the data is organized
@@ -166,3 +171,6 @@ Ethereal Mist Armor (Cleric) -- 3/7 pieces
 - Two rare, universal droppers (a Phoboplasm in Fear, a haunted chest in the
   Hate raid instance) can drop *any* planar class's piece for the slot they
   hit -- these are called out at the end of every report rather than per-set.
+- `/outputfile inventory` only dumps your own character's inventory/
+  equipment/keyring, never a pet's. Pieces equipped on your pet won't be
+  detected as owned; the report notes this at the bottom of every run.
